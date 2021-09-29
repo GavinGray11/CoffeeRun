@@ -21,13 +21,13 @@
           <!-- Input elements will go here -->
           <div class="form-group">
             <label for="coffeeOrder">Coffee Order</label>
-            <input class="form-control" name="coffee" id="coffeeOrder" autofocus>
+            <input class="form-control" name="coffee" id="coffeeOrder" autofocus required pattern="[a-zA-Z\s]+">
           </div>
           <!-- Email-->
           <div class="form-group">
             <label for="emailInput">Email</label>
             <input class="form-control" type="email" name="emailAddress" id="emailInput" value=""
-              placeholder="dr@who.com">
+              placeholder="dr@who.com" required>
           </div>
           <!-- Email-->
 
@@ -45,6 +45,11 @@
           <div class="radio">
             <label>
               <input type="radio" name="size" value="grande"> Grande
+            </label>
+          </div>
+          <div class="radio">
+            <label>
+              <input type="radio" name="size" value="Venti"> Venti
             </label>
           </div>
           <!-- Radio -->
@@ -75,9 +80,18 @@
         </form>
       </div>
     </div>
+
+    <div class="panel panel-default">
+      <div class="panel-body">
+        <h4>Pending Orders:</h4>
+        <div data-coffee-order="checklist"> </div>
+      </div>
+    </div>
   </section>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js" charset="utf-8"></script>
+  <script src="scripts/validation.js" charset="utf-8"></script>
+  <script src="scripts/checklist.js" charset="utf-8"></script>
   <script src="scripts/formhandler.js" charset="utf-8"></script>
   <script src="scripts/datastore.js" charset="utf-8"></script>
   <script src="scripts/truck.js" charset="utf-8"></script>
