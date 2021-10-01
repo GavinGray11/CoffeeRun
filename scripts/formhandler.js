@@ -30,6 +30,23 @@
       });
     }
 
+    addSubmitHandler2(fn) {
+      console.log('Setting submit handler for form2');
+      this.$formElement.on('submit', function (event) {
+        event.preventDefault();
+
+        var data = {};
+        $(this).serializeArray().forEach(function (item) {
+          data[item.name] = item.value;
+          console.log(item.name + ' is ' + item.value);
+        });
+        console.log(data);
+        fn(data);
+        this.reset();
+        this.elements[0].focus();
+      });
+    }
+
     addInputHandler(fn) {
       console.log('Setting input handler for form');
       this.$formElement.on('input', '[name="emailAddress"]', function (event) {

@@ -2,6 +2,7 @@
   'use strict';
   var FORM_SELECTOR = '[data-coffee-order="form"]';
   var CHECKLIST_SELECTOR = '[data-coffee-order="checklist"]';
+  var PAYFORM_SELECTOR = '[data-coffee-order="pay"]';
 
   var App = window.App;
   var Truck = App.Truck;
@@ -15,6 +16,7 @@
 
   var formHandler = new FormHandler(FORM_SELECTOR);
   var checkList = new CheckList(CHECKLIST_SELECTOR);
+  var formhandler2 = new FormHandler(PAYFORM_SELECTOR)
   checkList.addClickHandler(myTruck.deliverOrder.bind(myTruck));
   formHandler.addSubmitHandler(function (data) {
     console.log(formHandler);

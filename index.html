@@ -7,6 +7,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>CoffeeRun</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
+  <link rel="stylesheet" href="stylesheets/stylesheets.css">
 </head>
 
 <body class="container">
@@ -74,10 +76,56 @@
           <!-- Range Slider -->
 
           <!-- Buttons -->
-          <button type="submit" class="btn btn-default">Submit</button>
+          <div id="ex1" class="modal">
+
+            <p>hello world</p>
+
+          </div>
+
+
+
+          <button data-coffee-order="pay" type="submit" class="btn btn-default"><a href="#ex1"
+              rel="modal:open">Submit</a></button>
           <button type="reset" class="btn btn-default">Reset</button>
+
+
           <!-- Buttons -->
         </form>
+      </div>
+    </div>
+
+    <div class="panel panel-default">
+      <div class="panel-body">
+        <div class="wrapper">
+          <label for="payment">Payment</label>
+          <form class="form mt-4">
+            <div class="form-group"> <label for="name" class="">Name on the card</label> <input type="text"
+                class="form-control" placeholder="Nicolos Flemming">
+            </div>
+            <div class="form-group"> <label for="card" class="">Card number</label>
+              <div class="card-number"> <input type="text" class="card-no" step="4" placeholder="1234 4567 5869 1234"
+                  pattern="^[0-9].{15,}">
+              </div>
+            </div>
+            <div class="d-flex w-100">
+              <div class="d-flex w-50 pr-sm-4">
+                <div class="form-group"> <label for="expiry" class="">Experation date</label> <input type="text"
+                    class="form-control" placeholder="03/2020">
+                </div>
+              </div>
+              <div class="d-flex w-50 pl-sm-5 pl-3">
+                <div class="form-group"> <label for="cvv">CVV</label> 
+                     <input type="password" class="form-control pr-5" maxlength="3" placeholder="123">
+                </div>
+              </div>
+            </div>
+
+
+            <div class="my-3"> <input type="submit" value="place your order"
+                class="text-uppercase btn btn-primary btn-block p-3"> </div>
+
+          </form>
+        </div>
       </div>
     </div>
 
@@ -88,8 +136,10 @@
       </div>
     </div>
   </section>
+  
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js" charset="utf-8"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
   <script src="scripts/validation.js" charset="utf-8"></script>
   <script src="scripts/checklist.js" charset="utf-8"></script>
   <script src="scripts/formhandler.js" charset="utf-8"></script>
